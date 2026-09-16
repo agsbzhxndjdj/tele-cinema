@@ -1340,6 +1340,9 @@ val extractorApis: AtomicMutableList<ExtractorApi> = atomicListOf(
     Firestream(),
     Vids(),
     Playmate()
+    VidSrcArabic(),
+    TwoEmbedArabic(),
+    SuperEmbedArabic(),
 )
 
 
