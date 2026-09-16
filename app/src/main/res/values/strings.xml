@@ -797,4 +797,5 @@
         <item quantity="other">%d downloads queued</item>
     </plurals>
     <string name="player_is_live">Live</string>
+	<string name="tmdb_api_key">9ba4e29354937364c2202857afcd7f94</string>
 </resources>
