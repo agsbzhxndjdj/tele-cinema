@@ -5,6 +5,10 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
+env:
+  # تجنب تحذيرات Node.js
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,7 +40,7 @@ jobs:
         run: chmod +x gradlew
       
       - name: Build Release APK
-        run: ./gradlew assembleRelease --stacktrace
+        run: ./gradlew assembleRelease --stacktrace --no-daemon
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
@@ -44,3 +48,4 @@ jobs:
           name: tele-cinema-apk
           path: app/build/outputs/apk/release/*.apk
           retention-days: 7
+          if-no-files-found: warn
