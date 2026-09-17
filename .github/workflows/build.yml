@@ -6,7 +6,6 @@ on:
   workflow_dispatch:
 
 env:
-  # تجنب تحذيرات Node.js
   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
 jobs:
@@ -25,6 +24,11 @@ jobs:
       
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 'latest'
+          api-levels: 34
+          build-tools: 34.0.0
+          packages: 'platform-tools'
       
       - name: Cache Gradle packages
         uses: actions/cache@v4
